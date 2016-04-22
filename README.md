@@ -167,6 +167,22 @@ Update a case:
 => {code: 200, body: {investigationBody}}
 ```
 
+Find a case:
+
+```ruby
+> Signifyd::Case.find({ order_id: investigationId }, {})
+```
+
+Get case analysis
+```ruby
+> Signifyd::Case.find({analysis: true, order_id: investigationId }, {})
+```
+
+Get case notes
+```ruby
+> Signifyd::Case.find({notes: true, order_id: investigationId }, {})
+```
+
 All methods will be restful and will respond to a CRUD interface. `/cases` accepts GET requests to return all your cases, POST, with a json body to create a case, PUT, with a case_id to update a case and DELETE to remove an investigation. 
 
 In the future, we could switch to this ca: http://curl.haxx.se/ca/cacert.pem
